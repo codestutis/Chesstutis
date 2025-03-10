@@ -1,4 +1,6 @@
-<img src="./chesstutis_logo.png" alt="Chesstutis Logo" width="200"/>
+<div style="text-align: center;">
+  <img src="./chesstutis_logo.png" alt="Chesstutis Logo" width="200"/>
+</div>
 
 # Chesstutis
 
