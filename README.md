@@ -1,3 +1,5 @@
+![Chesstutis Logo](./chesstutis_logo.png)
+
 # Chesstutis
 
 # Resources
