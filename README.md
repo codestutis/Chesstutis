@@ -8,7 +8,7 @@ Chesstutis is a UCI C++ chess engine that I am developing as a learning project.
 
 ## 1. Choosing A Board Representation
 - The first step I will be taking in making this chess engine is choosing a board representation. There are many options to choose from for representing the board. Some common ones are bitboards, 2D arrays,
-- In addition to the representation of where each piece is located on the board, you also need to to store whos move it is, if either player has castling rights, and keeping track of previous moves for 50-move rule and draw by repitition.
+- In addition to storing where each piece is located on the board, you also need to to store whos move it is, if either player has castling rights, and keeping track of previous moves for 50-move rule and draw by repitition.
 
 ## 2. Game Logic
 - Rules of chess (movement, capturing, castling, en passant, promotion)
