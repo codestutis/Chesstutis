@@ -52,3 +52,5 @@ Chesstutis is a UCI C++ chess engine that I am developing as a learning project.
 [Algorithms Explained – minimax and alpha-beta pruning - Sebastian Lague](https://youtu.be/l-hh51ncgDI?si=zrX8d2f7Ov7V-2IE)
 
 [Coding adventure: Chess - Sebastian Lague](https://youtu.be/U4ogK0MIzqk?si=vrmSiL612RTlVxej)
+
+[Coding Adventure: Making a Better Chess bot - Sebastian Lague](https://youtu.be/_vqlIPDR2TU?si=hVpPM-5AWTl2Fn6t)
