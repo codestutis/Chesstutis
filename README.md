@@ -2,25 +2,29 @@
 <img src="./chesstutis_logo.png" alt="Chesstutis Logo" width="200"/>
 
 
-## Chesstutis
+# Chesstutis
 
 Chesstutis is a UCI C++ chess engine that I am developing as a learning project. The primary goal of this project is to deepen my understanding of chess algorithms and artificial intelligence. I am implementing the minimax algorithm with alpha-beta pruning to evaluate the best possible moves. This project allows me to explore the complexities of game theory and improve my programming skills.
 
-## 1. Choosing A Board Representation
-- The first step I will be taking in making this chess engine is choosing a board representation. There are many options to choose from for representing the board. Some common ones are bitboards, 2D arrays,
+# 1. Choosing A Board Representation
+- The first step I will be taking in making this chess engine is choosing a board representation. There are many options to choose from for representing the board. Some common ones are bitboards, and 2D arrays.
 - In addition to storing where each piece is located on the board, you also need to to store whos move it is, if either player has castling rights, and keeping track of previous moves for 50-move rule and draw by repitition.
+- Each separate board representation will share methods that will be defined in the BoardRepresentation.hpp file
 
-## 2. Game Logic
+ ### Bitboards
+ - 
+
+# 2. Move Generation
 - Rules of chess (movement, capturing, castling, en passant, promotion)
 - Turn management
 - Move validation and legality checks
 
-## 3. Board Evaluation
+# 3. Board Evaluation
 - Heuristics for evaluating board positions
 - Piece values and positional advantages
 - Evaluation functions and scoring
 
-## 4. Minimax Algorithm
+# 4. Minimax Algorithm
 - Implementation of the minimax algorithm
 - Alpha-beta pruning optimization
 - Depth control and iterative deepening
