@@ -16,15 +16,14 @@ public:
     Moves are in format e2e4 e7e5 etc...*/
     virtual vector<string> getMoves() = 0;
 
-    /* apply the move given as an argument on the baord
+    /* apply the move given as an argument on the board
     Moves are given in the format e2e5 c7c5 etc...*/
     virtual void makeMove(string move) = 0;
 
     /* returns a string of the FEN representation fo the current state of the board*/
     virtual string getFEN() = 0;
 
-    /* returns true of the game is over*/
+    /* returns true of the game is over */
     virtual bool gameOver() = 0;
 
-
-}
+};
