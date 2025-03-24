@@ -11,8 +11,9 @@ Chesstutis is a UCI C++ chess engine that I am developing as a learning project.
 - In addition to storing where each piece is located on the board, you also need to to store whos move it is, if either player has castling rights, and keeping track of previous moves for 50-move rule and draw by repitition.
 - Each separate board representation will share methods that will be defined in the BoardRepresentation.hpp file
 
- ### Bitboards
- - 
+ ### Bitboards - bruh im confused
+ - bitboards are a way to represent where a certain type of piece is on the board. You use a 64-bit integer, one bit for every square, and there will be 1 when the square contains a piece and a 0 when its empty
+ - I will have 12 bitboards to represent all the pieces on the board. 6 types of pieces and 2 colors.
 
 # 2. Move Generation
 - Rules of chess (movement, capturing, castling, en passant, promotion)
