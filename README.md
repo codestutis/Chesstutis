@@ -4,42 +4,7 @@
 
 # Chesstutis
 
-Chesstutis is a UCI C++ chess engine that I am developing as a learning project. The primary goal of this project is to deepen my understanding of chess algorithms and artificial intelligence. I am implementing the minimax algorithm with alpha-beta pruning to evaluate the best possible moves. This project allows me to explore the complexities of game theory and improve my programming skills.
-
-# 1. Choosing A Board Representation
-- The first step I will be taking in making this chess engine is choosing a board representation. There are many options to choose from for representing the board. Some common ones are bitboards, and 2D arrays.
-- In addition to storing where each piece is located on the board, you also need to to store whos move it is, if either player has castling rights, and keeping track of previous moves for 50-move rule and draw by repitition.
-- Each separate board representation will share methods that will be defined in the BoardRepresentation.hpp file
-
- ### Bitboards - bruh im confused
- - bitboards are a way to represent where a certain type of piece is on the board. You use a 64-bit integer, one bit for every square, and there will be 1 when the square contains a piece and a 0 when its empty
- - I will have 12 bitboards to represent all the pieces on the board. 6 types of pieces and 2 colors.
-
-# 2. Move Generation
-- Rules of chess (movement, capturing, castling, en passant, promotion)
-- Turn management
-- Move validation and legality checks
-
-# 3. Board Evaluation
-- Heuristics for evaluating board positions
-- Piece values and positional advantages
-- Evaluation functions and scoring
-
-# 4. Minimax Algorithm
-- Implementation of the minimax algorithm
-- Alpha-beta pruning optimization
-- Depth control and iterative deepening
-- Move ordering and search enhancements
-- Performance considerations and optimizations
-- Example of minimax in action
-- Testing and debugging the algorithm
-- Future improvements and enhancements
-- Integration with the overall chess engine
-- Handling special cases and edge scenarios
-- Comparison with other search algorithms
-- Practical applications and use cases
-- Challenges and limitations
-- Resources for further learning
+Chesstutis will be a UCI C++ chess engine eventually
 # Resources
 
 [simple minimax for chess](https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-1d55a9266977/)
