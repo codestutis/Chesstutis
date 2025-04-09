@@ -23,7 +23,7 @@ class Bitboard {
     string toString();
     string getFEN();
     void setSquare(uint64_t &board, int square);
-    bool getSquare(int square);
+    char getSquare(int square);
 };
 
 #endif // BITBOARD_HPP

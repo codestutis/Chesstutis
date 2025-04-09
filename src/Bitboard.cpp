@@ -115,7 +115,7 @@ string Bitboard::toString()
 
     // Convert the board array to a string for display
     string ret = "";
-    for (int i = 56; i >= 0; i -= 8)
+    for (int i = 0; i <= 63; i += 8)
     { // Loop through rows from top to bottom
         for (int j = i; j < i + 8; j++)
         {
@@ -133,12 +133,12 @@ string Bitboard::getFEN()
     return "";
 }
 
-void setSquare(int square)
+void Bitboard::setSquare(uint64_t &board, int square)
 {
 
 }
 
-char getSquare(int square)
+char Bitboard::getSquare(int square)
 {
     return 'x';
 }
