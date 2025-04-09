@@ -46,7 +46,7 @@ void Bitboard::initialize(string fen) {
   }
 }
 
-string Bitboard::displayBoard() {
+string Bitboard::toString() {
     // Array of bitboards and their corresponding piece characters
   struct BitboardMapping {
     uint64_t* bitboard;

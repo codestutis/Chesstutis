@@ -26,7 +26,7 @@ class Bitboard {
 
     Bitboard();
     void initialize(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-    string displayBoard();
+    string toString();
     vector<string> getMoves();
     void makeMove(string move);
     string getFEN();

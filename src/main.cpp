@@ -5,5 +5,5 @@ int main() {
 
   board.initialize();
 
-  cout << board.displayBoard() << endl;
+  cout << board.toString() << endl;
 }
