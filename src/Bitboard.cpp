@@ -63,7 +63,7 @@ void Bitboard::initialize(string fen)
                 board[blackQueens] |= (1ULL << boardIndex);
                 break;
             case 'k':
-                board[whiteKing] |= (1ULL << boardIndex);
+                board[blackKing] |= (1ULL << boardIndex);
                 break;
             case 'P':
                 board[whitePawns] |= (1ULL << boardIndex);
@@ -101,7 +101,19 @@ string Bitboard::toString()
     };
 
     BitboardMapping bitboards[] = {
-        {&board[whitePawns], 'P'}, {&board[whiteKnights], 'N'}, {&board[whiteBishops], 'B'}, {&board[whiteRooks], 'R'}, {&board[whiteQueens], 'Q'}, {&board[whiteKing], 'K'}, {&board[blackPawns], 'p'}, {&board[blackKnights], 'n'}, {&board[blackBishops], 'b'}, {&board[blackRooks], 'r'}, {&board[blackQueens], 'q'}, {&board[blackKing], 'k'}};
+        {&board[whitePawns], 'P'}, 
+        {&board[whiteKnights], 'N'},
+        {&board[whiteBishops], 'B'}, 
+        {&board[whiteRooks], 'R'}, 
+        {&board[whiteQueens], 'Q'}, 
+        {&board[whiteKing], 'K'}, 
+        {&board[blackPawns], 'p'}, 
+        {&board[blackKnights], 'n'}, 
+        {&board[blackBishops], 'b'}, 
+        {&board[blackRooks], 'r'}, 
+        {&board[blackQueens], 'q'}, 
+        {&board[blackKing], 'k'}
+    };
     // Initialize an empty board
     char boardArray[64];
     for (int i = 0; i < 64; i++)
@@ -142,9 +154,9 @@ string Bitboard::getFEN()
     return "";
 }
 
-void Bitboard::setSquare(uint64_t &board, int square)
+void Bitboard::setSquare(PieceType pt, int square)
 {
-
+    board[pt] |= (1ULL << square);
 }
 
 char Bitboard::getSquare(int square)

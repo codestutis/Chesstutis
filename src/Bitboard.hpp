@@ -10,7 +10,7 @@ using namespace std;
 
 class Bitboard
 {
-private:
+public:
   enum PieceType
   {
     whitePawns,
@@ -29,12 +29,11 @@ private:
 
   uint64_t board[12];
 
-public:
   Bitboard();
   void initialize(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
   string toString();
   string getFEN();
-  void setSquare(uint64_t &board, int square);
+  void setSquare(PieceType pt, int square);
   char getSquare(int square);
 };
 
