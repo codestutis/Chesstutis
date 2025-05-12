@@ -93,27 +93,6 @@ void Bitboard::initialize(string fen)
 
 string Bitboard::toString()
 {
-    // Array of bitboards and their corresponding piece characters
-    struct BitboardMapping
-    {
-        uint64_t *bitboard;
-        char piece;
-    };
-
-    BitboardMapping bitboards[] = {
-        {&board[whitePawns], 'P'}, 
-        {&board[whiteKnights], 'N'},
-        {&board[whiteBishops], 'B'}, 
-        {&board[whiteRooks], 'R'}, 
-        {&board[whiteQueens], 'Q'}, 
-        {&board[whiteKing], 'K'}, 
-        {&board[blackPawns], 'p'}, 
-        {&board[blackKnights], 'n'}, 
-        {&board[blackBishops], 'b'}, 
-        {&board[blackRooks], 'r'}, 
-        {&board[blackQueens], 'q'}, 
-        {&board[blackKing], 'k'}
-    };
     // Initialize an empty board
     char boardArray[64];
     for (int i = 0; i < 64; i++)
@@ -127,7 +106,7 @@ string Bitboard::toString()
         uint64_t bitboard = *mapping.bitboard;
         for (int i = 0; i < 64; i++)
         {
-            if (bitboard & (1ULL << (63 - i)))
+            if (bitboard & (1ULL << i))
             { // Check if the bit is set
                 boardArray[i] = mapping.piece;
             }
@@ -136,14 +115,12 @@ string Bitboard::toString()
 
     // Convert the board array to a string for display
     string ret = "";
-    for (int i = 0; i <= 63; i += 8)
-    { // Loop through rows from top to bottom
-        for (int j = i; j < i + 8; j++)
-        {
-            ret += boardArray[j];
-            ret += ' ';
-        }
-        ret += '\n';
+    for (int rank = 7; rank >= 0; --rank) {
+      for (int file = 0; file < 8; ++file) {
+        ret += boardArray[rank * 8 + file];
+        ret += " ";
+      }
+      ret += "\n";
     }
     return ret;
 }
@@ -161,5 +138,11 @@ void Bitboard::setSquare(PieceType pt, int square)
 
 char Bitboard::getSquare(int square)
 {
-    return 'x';
+  for (const auto &mapping: bitboards) {
+    if (*mapping.bitboard & (1ULL << square)) {
+      return mapping.piece;
+    }
+  }
+
+  return '.';
 }
