@@ -14,6 +14,16 @@ enum CastlingRights {
     BLACK_QUEENSIDE = 1 << 3  // 1000
 };
 
+
+struct Move {
+  int from;
+  int to;
+  int promotion = 0;
+  bool isCapture = false;
+  bool isEnPassant = false;
+  bool isCastling = false;
+};
+
 class Board {
   public:
     /*
@@ -49,6 +59,7 @@ class Board {
     bool whiteQueenCastle() const;
     bool blackKingCastle() const;
     bool blackQueenCastle() const;
+
   private:
     Bitboard bitboard;
     bool whiteToMove;
