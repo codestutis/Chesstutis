@@ -48,37 +48,37 @@ void Bitboard::initialize(string fen)
             switch (c)
             {
             case 'p':
-                board[blackPawns] |= (1ULL << boardIndex);
+                board[blackPawn] |= (1ULL << boardIndex);
                 break;
             case 'n':
-                board[blackKnights] |= (1ULL << boardIndex);
+                board[blackKnight] |= (1ULL << boardIndex);
                 break;
             case 'b':
-                board[blackBishops] |= (1ULL << boardIndex);
+                board[blackBishop] |= (1ULL << boardIndex);
                 break;
             case 'r':
-                board[blackRooks] |= (1ULL << boardIndex);
+                board[blackRook] |= (1ULL << boardIndex);
                 break;
             case 'q':
-                board[blackQueens] |= (1ULL << boardIndex);
+                board[blackQueen] |= (1ULL << boardIndex);
                 break;
             case 'k':
                 board[blackKing] |= (1ULL << boardIndex);
                 break;
             case 'P':
-                board[whitePawns] |= (1ULL << boardIndex);
+                board[whitePawn] |= (1ULL << boardIndex);
                 break;
             case 'N':
-                board[whiteKnights] |= (1ULL << boardIndex);
+                board[whiteKnight] |= (1ULL << boardIndex);
                 break;
             case 'B':
-                board[whiteBishops] |= (1ULL << boardIndex);
+                board[whiteBishop] |= (1ULL << boardIndex);
                 break;
             case 'R':
-                board[whiteRooks] |= (1ULL << boardIndex);
+                board[whiteRook] |= (1ULL << boardIndex);
                 break;
             case 'Q':
-                board[whiteQueens] |= (1ULL << boardIndex);
+                board[whiteQueen] |= (1ULL << boardIndex);
                 break;
             case 'K':
                 board[whiteKing] |= (1ULL << boardIndex);

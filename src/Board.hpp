@@ -49,7 +49,13 @@ class Board {
     /*
      * returns reference to the current bitboard 
      */
-    const Bitboard& getBitboard() const;
+    const Bitboard& getBitboard();
+
+    void setSquare(Bitboard::PieceType pt, int row, int col);
+
+    char getSquare(int row, int col);
+
+    string toString();
 
     int getNumMoves() const;
 

@@ -13,17 +13,17 @@ class Bitboard
 public:
   enum PieceType
   {
-    whitePawns,
-    whiteKnights,
-    whiteBishops,
-    whiteRooks,
-    whiteQueens,
+    whitePawn,
+    whiteKnight,
+    whiteBishop,
+    whiteRook,
+    whiteQueen,
     whiteKing,
-    blackPawns,
-    blackKnights,
-    blackBishops,
-    blackRooks,
-    blackQueens,
+    blackPawn,
+    blackKnight,
+    blackBishop,
+    blackRook,
+    blackQueen,
     blackKing,
   };
 
@@ -38,17 +38,17 @@ public:
     };
 
     BitboardMapping bitboards[12] = {
-        {&board[whitePawns], 'P'}, 
-        {&board[whiteKnights], 'N'},
-        {&board[whiteBishops], 'B'}, 
-        {&board[whiteRooks], 'R'}, 
-        {&board[whiteQueens], 'Q'}, 
+        {&board[whitePawn], 'P'}, 
+        {&board[whiteKnight], 'N'},
+        {&board[whiteBishop], 'B'}, 
+        {&board[whiteRook], 'R'}, 
+        {&board[whiteQueen], 'Q'}, 
         {&board[whiteKing], 'K'}, 
-        {&board[blackPawns], 'p'}, 
-        {&board[blackKnights], 'n'}, 
-        {&board[blackBishops], 'b'}, 
-        {&board[blackRooks], 'r'}, 
-        {&board[blackQueens], 'q'}, 
+        {&board[blackPawn], 'p'}, 
+        {&board[blackKnight], 'n'}, 
+        {&board[blackBishop], 'b'}, 
+        {&board[blackRook], 'r'}, 
+        {&board[blackQueen], 'q'}, 
         {&board[blackKing], 'k'}
     };
 

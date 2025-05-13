@@ -1,17 +1,12 @@
-#include "Bitboard.hpp"
+#include "Board.hpp"
 
 int main() {
-  Bitboard board;
+  Board board;
 
-  board.initialize();
+  board.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 
   cout << board.toString() << endl;
-  board.setSquare(Bitboard::whiteKing, 44);
-  cout << "Set Piece" << endl;
-  cout << board.toString() << endl;
+  board.setSquare(Bitboard::whiteKing, 4, 4);
 
-  cout << "get square: " << board.getSquare(44) << endl;
-  cout << "get square: " << board.getSquare(36) << endl;
-  cout << "get square: " << board.getSquare(62) << endl;
-  cout << "get square: " << board.getSquare(55) << endl;
+  cout << board.toString() << endl;
 }
