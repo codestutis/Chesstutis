@@ -1,4 +1,5 @@
 #include "Board.hpp"
+#include "MoveGen.hpp"
 
 int main() {
   Board board;
@@ -9,4 +10,6 @@ int main() {
   board.setSquare(Bitboard::whiteKing, 4, 4);
 
   cout << board.toString() << endl;
+
+  cout << MoveGen::generateLegalMoves(board)[0].isCapture << endl;
 }

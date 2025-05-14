@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++17
-SRC = src/main.cpp src/Bitboard.cpp src/Board.cpp
+SRC = src/main.cpp src/Bitboard.cpp src/Board.cpp src/MoveGen.cpp
 TARGET = chess
 
 all: $(TARGET)
