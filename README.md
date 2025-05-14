@@ -5,6 +5,44 @@
 # Chesstutis
 
 Chesstutis will be a UCI C++ chess engine eventually
+
+
+```mermaid
+classDiagram
+    class Board {
+        bitboard
+        +setPiece()
+        +getPiece()
+        +initialize()
+        +generateMoves()
+    }
+
+    class Eval {
+        +evaluateBoard()
+    }
+
+    class Search {
+        +minimax()
+    }
+
+    class UCI {
+        +handleCommands()
+    }
+    class Main {
+        +startGame()
+    }
+
+    class GameState {
+        +makeMove()
+        +undoMove()
+    }
+
+    GameState --> Board
+    GameState --> Eval
+    GameState --> Search
+    Main --> GameState
+    Main --> UCI
+
 # Resources
 
 [simple minimax for chess](https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-1d55a9266977/)
