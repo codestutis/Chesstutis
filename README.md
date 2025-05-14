@@ -42,7 +42,7 @@ classDiagram
     GameState --> Search
     Main --> GameState
     Main --> UCI
-
+```
 # Resources
 
 [simple minimax for chess](https://www.freecodecamp.org/news/simple-chess-ai-step-by-step-1d55a9266977/)
