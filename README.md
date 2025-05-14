@@ -14,7 +14,6 @@ classDiagram
         +setPiece()
         +getPiece()
         +initialize()
-        +generateMoves()
     }
 
     class Eval {
@@ -35,6 +34,12 @@ classDiagram
     class GameState {
         +makeMove()
         +undoMove()
+        +generateMoves()
+    }
+
+    class MoveGen {
+        +generateLegalMoves()
+        +generatePseudoLegalMoves()
     }
 
     GameState --> Board
@@ -42,6 +47,7 @@ classDiagram
     GameState --> Search
     Main --> GameState
     Main --> UCI
+    GameState --> MoveGen
 ```
 # Resources
 

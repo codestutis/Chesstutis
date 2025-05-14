@@ -3,7 +3,7 @@
 #ifndef MOVEGEN_HPP
 #define MOVEGEN_HPP
 
-#include "Board.hpp"
+#include "GameState.hpp"
 #include <vector>
 
 namespace MoveGen {

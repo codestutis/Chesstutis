@@ -1,5 +1,5 @@
-#include "Board.hpp"
-#include "MoveGen.hpp"
+#include "UCI.hpp"
+#include "GameState.hpp"
 
 int main() {
   Board board;

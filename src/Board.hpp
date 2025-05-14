@@ -1,77 +1,94 @@
 
-#ifndef BOARD_HPP
-#define BOARD_HPP
-
-#include "Bitboard.hpp"
+#ifndef BITBOARD_HPP
+#define BITBOARD_HPP
+#include <iostream>
+#include <bitset>
 #include <string>
+#include <cstdint>
 
 using namespace std;
 
-enum CastlingRights {
-    WHITE_KINGSIDE  = 1 << 0, // 0001
-    WHITE_QUEENSIDE = 1 << 1, // 0010
-    BLACK_KINGSIDE  = 1 << 2, // 0100
-    BLACK_QUEENSIDE = 1 << 3  // 1000
+enum PieceType
+{
+  whitePawn,
+  whiteKnight,
+  whiteBishop,
+  whiteRook,
+  whiteQueen,
+  whiteKing,
+  blackPawn,
+  blackKnight,
+  blackBishop,
+  blackRook,
+  blackQueen,
+  blackKing,
+  allWhite,
+  allBlack,
+  all
 };
 
 
-struct Move {
-  int from;
-  int to;
-  int promotion = 0;
-  bool isCapture = false;
-  bool isEnPassant = false;
-  bool isCastling = false;
-};
-
-class Board {
+class Board
+{
   public:
-    /*
-     * Constructor
-     */
-    Board();
+  
+  uint64_t board[15];
+  
+  // Array of bitboards and their corresponding piece characters
+  // each element is a BitboardMapping struct
+  struct BoardMapping
+  {
+    uint64_t *bitboard;
+    char piece;
+  };
+  
+  BoardMapping bitboards[12] = {
+    {&board[whitePawn], 'P'}, 
+    {&board[whiteKnight], 'N'},
+    {&board[whiteBishop], 'B'}, 
+    {&board[whiteRook], 'R'}, 
+    {&board[whiteQueen], 'Q'}, 
+    {&board[whiteKing], 'K'}, 
+    {&board[blackPawn], 'p'}, 
+    {&board[blackKnight], 'n'}, 
+    {&board[blackBishop], 'b'}, 
+    {&board[blackRook], 'r'}, 
+    {&board[blackQueen], 'q'}, 
+    {&board[blackKing], 'k'}
+  };
 
-    /*
-     * load fen using function from Bitboard
-     */
-    void loadFEN(string fen);
+  /*
+   * initialize each bitboard to 0
+   */
+  Board();
 
-    /*
-     * returns fen string using bitboard function 
-     */
-    string getFEN();
+  /*
+   * initialize every bitboard based on the given fen string
+   * default is starting position
+   */
+  void initialize(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 
-    /*
-     * returns true if its whites move 
-     */
-    bool isWhiteToMove() const;
+  /*
+   * returns string representation of the board for testing and what not
+   */
+  string toString();
 
-    /*
-     * returns reference to the current bitboard 
-     */
-    const Bitboard& getBitboard();
+  /*
+   * return the fen of the current board state
+   */
+  string getFEN();
 
-    void setSquare(Bitboard::PieceType pt, int row, int col);
+  /*
+   * sets a given piece type at a certain board location
+   * moves should be validated before hand
+   */
+  void setSquare(PieceType pt, int row, int col);
 
-    char getSquare(int row, int col);
-
-    string toString();
-
-    int getNumMoves() const;
-
-    // ---------------- GET CASTLING RIGHTS -------------------
-    
-    bool whiteKingCastle() const;
-    bool whiteQueenCastle() const;
-    bool blackKingCastle() const;
-    bool blackQueenCastle() const;
-
-  private:
-    Bitboard bitboard;
-    bool whiteToMove;
-    char castlingRights;
-    int numMoves;
-
+  /*
+   * returns the char of the piece at a certain square
+   * square should be validated before hand
+   */
+  char getSquare(int row, int col);
 };
 
-#endif
+#endif // BITBOARD_HPP
