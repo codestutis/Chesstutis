@@ -1,8 +1,31 @@
-
 #include "GameState.hpp"
 
+GameState::GameState() {
+  whiteToMove = true;
+  castlingRights = 0xf;
+  numMoves = 0;
+}
 
+void GameState::initialize(string fen) {
+  bitboard.initialize(fen);
+}
 
+bool GameState::makeMove(string m) {
+  // check valid move 
+  // return false if not
+
+  // get piece type
+
+  // get row and column
+}
+
+bool undoMove(string m) {
+
+}
+
+string GameState::toString() {
+  return bitboard.toString();
+}
 
 int GameState::getNumMoves() const {
   return numMoves;

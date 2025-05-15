@@ -1,15 +1,21 @@
-#include "UCI.hpp"
+//#include "UCI.hpp"
 #include "GameState.hpp"
 
 int main() {
-  Board board;
+  GameState game;
+  game.initialize();
 
-  board.loadFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+  while (true) {
+    cout << game.toString() << endl;
 
-  cout << board.toString() << endl;
-  board.setSquare(Bitboard::whiteKing, 4, 4);
+    string move;
+    cout << "Enter your move: ";
+    cin >> move;
 
-  cout << board.toString() << endl;
+    game.makeMove(move);
+  }
 
-  cout << MoveGen::generateLegalMoves(board)[0].isCapture << endl;
+  cout << "Game over!" << endl;
+  return 0;
+
 }

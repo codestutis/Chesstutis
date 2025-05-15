@@ -25,11 +25,17 @@ class GameState {
     int numMoves;
 
     public:
-        
+    GameState();
     bool whiteKingCastle() const;
     bool whiteQueenCastle() const;
     bool blackKingCastle() const;
     bool blackQueenCastle() const;
 
     int getNumMoves() const;
+
+    bool makeMove(string m);
+    bool undoMove(string m);
+
+    string toString();
+    void initialize(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 };
