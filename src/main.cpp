@@ -12,7 +12,10 @@ int main() {
     cout << "Enter your move: ";
     cin >> move;
 
-    game.makeMove(move);
+    bool moveResult = game.makeMove(move);
+    if (!moveResult) {
+      cout << "Invalid move: " << endl;
+    }
   }
 
   cout << "Game over!" << endl;
