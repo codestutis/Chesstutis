@@ -38,4 +38,27 @@ class GameState {
 
     string toString();
     void initialize(string fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+
+
+
+    struct BoardMapping
+  {
+    PieceType pt;
+    char piece;
+  };
+  
+  BoardMapping bitboards[12] = {
+    {whitePawn, 'P'}, 
+    {whiteKnight, 'N'},
+    {whiteBishop, 'B'}, 
+    {whiteRook, 'R'}, 
+    {whiteQueen, 'Q'}, 
+    {whiteKing, 'K'}, 
+    {blackPawn, 'p'}, 
+    {blackKnight, 'n'}, 
+    {blackBishop, 'b'}, 
+    {blackRook, 'r'}, 
+    {blackQueen, 'q'}, 
+    {blackKing, 'k'}
+  };
 };

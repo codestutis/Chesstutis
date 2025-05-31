@@ -84,6 +84,8 @@ class Board
    */
   void setSquare(PieceType pt, int row, int col);
 
+  void clearSquare(int row, int col);
+
   /*
    * returns the char of the piece at a certain square
    * square should be validated before hand

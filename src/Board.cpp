@@ -1,4 +1,5 @@
 #include "Board.hpp"
+#include <cstdint>
 #include <iostream>
 #include <bitset>
 
@@ -102,6 +103,12 @@ string Board::getFEN()
 void Board::setSquare(PieceType pt, int row, int col)
 {
     board[pt] |= (1ULL << (((row - 1) * 8) + (col - 1)));
+}
+
+void Board::clearSquare(int row, int col) {
+  for (uint64_t &b: board) {
+    b &= ~(1ULL << (((row -1) * 8) + (col - 1)));
+  }
 }
 
 char Board::getSquare(int row, int col)

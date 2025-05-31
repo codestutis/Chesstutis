@@ -1,5 +1,4 @@
 #include "GameState.hpp"
-#include <unordered_map>
 
 GameState::GameState() {
   whiteToMove = true;
@@ -57,8 +56,15 @@ bool GameState::makeMove(string m) {
 
   if (piece == '.') return false;
 
-  bitboard.setSquare(piece, startRow, startCol);
+  //TODO set start square to empty and end square to the square 
+  bitboard.clearSquare(startRow, startCol);
 
+  // convert piece to the enum
+  for (const auto &mapping : bitboards) {
+    if (mapping.piece == piece) {
+      bitboard.setSquare(mapping.pt, endRow, endCol);
+    }
+  }
 
   cout << piece << endl;
 
